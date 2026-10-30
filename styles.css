@@ -2054,7 +2054,7 @@ textarea.w-input, textarea.w-select {
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #3898ec;
-  background-image: url("../../../d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath d="m3 8 3 3 7-7" fill="none" stroke="white" stroke-width="2"/%3E%3C/svg%3E");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2096,7 +2096,7 @@ h2 {
 
 .logo-nav {
   color: var(--black-grey);
-  background-image: url("../69a6f186ba38278a45c28c60_Mask%20group.svg");
+  background-image: url("69a6f186ba38278a45c28c60_Mask%20group.svg");
   background-position: 4%;
   background-repeat: no-repeat;
   background-size: 60px 60px;
@@ -4043,4 +4043,48 @@ h2 {
 
 #w-node-_5c4223fe-7e2a-e31a-5ead-d8a7292eb842-312ee56f {
   grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+/* Portfolio demonstration controls */
+@media screen and (max-width: 991px) {
+  .navbar .container-hero.flex { flex-wrap: wrap; gap: 16px; }
+  .navbar .phon-nav { max-width: 100%; }
+}
+.demo-notice { padding: 12px 20px; background: #24332e; color: white; text-align: center; font-size: 14px; }
+.demo-contact { font-size: 13px; max-width: 180px; }
+#demo-dialog { width: min(480px, calc(100% - 32px)); max-height: 90dvh; overflow: auto; border: 0; border-radius: 16px; padding: 32px; color: #202020; }
+#demo-dialog::backdrop { background: #0009; }
+#demo-dialog h2 { font-size: 26px; line-height: 1.2; margin-top: 12px; }
+#demo-dialog label { display: block; margin: 12px 0 6px; }
+#demo-dialog input { color: #222; background: #f4f4f4; width: 100%; }
+.demo-close { float: right; font-size: 28px; background: transparent; border: 0; padding: 6px; cursor: pointer; }
+#demo-dialog a { color: #344e41; text-decoration: underline; }
+#demo-result { margin-top: 16px; }
+
+/* Keep the two header actions aligned regardless of label wrapping. */
+.navbar .phon-nav {
+  display: grid;
+  grid-template-rows: minmax(52px, auto) 52px;
+  justify-items: center;
+  align-items: center;
+}
+.navbar .phon-nav .button-nav { height: 52px; box-sizing: border-box; }
+
+/* Crop the photographs into circles without stretching their proportions. */
+.tablet-version .img-magic {
+  width: 83px;
+  height: 83px;
+  min-width: 83px;
+  flex: 0 0 83px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Every slide uses the same right-aligned image area. */
+.slider-design .w-slide { margin-left: 0; text-align: right; }
+.slider-design .img-design { width: 75%; }
+@media screen and (max-width: 767px) {
+  .slider-design { padding-top: 50px; }
+  .slider-design .img-design { width: 100%; }
+  .slider-design .arrow-design { top: 0; }
 }
