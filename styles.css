@@ -4050,7 +4050,6 @@ h2 {
   .navbar .container-hero.flex { flex-wrap: wrap; gap: 16px; }
   .navbar .phon-nav { max-width: 100%; }
 }
-.demo-notice { padding: 12px 20px; background: #24332e; color: white; text-align: center; font-size: 14px; }
 .demo-contact { font-size: 13px; max-width: 180px; }
 #demo-dialog { width: min(480px, calc(100% - 32px)); max-height: 90dvh; overflow: auto; border: 0; border-radius: 16px; padding: 32px; color: #202020; }
 #demo-dialog::backdrop { background: #0009; }
@@ -4087,4 +4086,111 @@ h2 {
   .slider-design { padding-top: 50px; }
   .slider-design .img-design { width: 100%; }
   .slider-design .arrow-design { top: 0; }
+}
+
+/* Button links keep their label free of browser link underlines. */
+a.button-nav, a.button-nav:hover, a.button-nav:focus, a.button-nav:active,
+a.button-nav .btn-title-nav { text-decoration: none; }
+
+/* Hero photo mask preserves the existing image sizing and page layout. */
+.hero-photo-reveal { overflow: hidden; }
+.hero-photo-reveal > .img-main { display: block; transform-origin: center; }
+
+/* Let GSAP own opacity/transform; preserve the existing caption hover spacing. */
+#Reviews .link-progect { transition: letter-spacing .555s; }
+@media (prefers-reduced-motion: reduce) { #Reviews .link-progect { transition: none; } }
+
+.hero-photo-depth > .img-main { display: block; }
+
+
+/* Button arrows move inside a stationary circle. */
+.button-arrow-glyph { display: inline-block; transition: transform 350ms ease-in-out; }
+:is(.button-nav, .button-footer) :is(.arrow-text, .arrow-footer) { transition: background-color 350ms ease-in-out, color 350ms ease-in-out; border: 0; }
+@media (hover: hover) and (pointer: fine) {
+  :is(.button-nav, .button-footer):hover .button-arrow-glyph { transform: translateX(3px); }
+  :is(.button-nav, .button-footer):hover :is(.arrow-text, .arrow-footer) { background-color: #e5e9ff; color: #0e36e6; }
+}
+:is(.button-nav, .button-footer):focus-visible .button-arrow-glyph { transform: translateX(3px); }
+:is(.button-nav, .button-footer):focus-visible :is(.arrow-text, .arrow-footer) { background-color: #e5e9ff; color: #0e36e6; }
+@media (prefers-reduced-motion: reduce) {
+  .button-arrow-glyph { transform: none !important; transition: none; }
+  :is(.button-nav, .button-footer) :is(.arrow-text, .arrow-footer) { transition: none; }
+}
+
+/* Center arrow glyphs independently of inherited font metrics. */
+:is(.button-nav, .button-footer) :is(.arrow-text, .arrow-footer) {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; min-width: 36px; min-height: 36px;
+}
+.button-arrow-glyph {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; font-family: Arial, sans-serif;
+  font-size: 28px; line-height: 1;
+}
+
+/* Header anchors: a faint blue glow below the label, without a hard line. */
+.nav-label-glow { display: inline-block; position: relative; }
+.nav-label-glow::after {
+  content: ''; position: absolute; pointer-events: none;
+  left: 0; right: 0; bottom: -3px; height: 4px;
+  background: rgba(14,54,230,.3); border-radius: 50%;
+  filter: blur(3px); opacity: 0;
+  transition: opacity 350ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .menu-item-nav:hover .nav-label-glow::after { opacity: 1; }
+}
+.menu-item-nav:focus-visible .nav-label-glow::after { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-label-glow::after { transition: none; }
+}
+
+/* Header actions use a single row after removing their introductory labels. */
+.navbar .phon-nav { grid-template-rows: 52px; }
+
+/* Shared button treatment: white sweeps down as the blue fill retreats. */
+a.button-nav, a.button-footer {
+  color: #fff;
+  background-color: #0e36e6;
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 50%, #0e36e6 50%, #0e36e6 100%);
+  background-size: 100% 200%;
+  background-position: 0 100%;
+  box-shadow: inset 0 0 0 1px #0e36e6;
+  text-decoration: none;
+  transition: background-position 555ms ease-in-out, color 555ms ease-in-out;
+}
+a.button-nav .btn-title-nav, a.button-footer .text-block-2 { color: inherit; }
+a.button-nav:hover, a.button-footer:hover,
+a.button-nav:focus-visible, a.button-footer:focus-visible {
+  color: #0e36e6;
+  background-color: #0e36e6;
+  background-position: 0 0;
+  box-shadow: inset 0 0 0 1px #0e36e6;
+  text-decoration: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  a.button-nav, a.button-footer { transition: none; }
+}
+
+/* Tablet header: keep the logo, navigation and both actions in one row. */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar .container-hero.flex {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 14px;
+  }
+  .navbar .logo-nav {
+    font-size: clamp(44px, 5.6vw, 55px);
+    line-height: 1.15;
+    white-space: nowrap;
+    background-size: .8em;
+  }
+  .navbar .phon-nav { margin: 0; }
+  .navbar .phon-nav .button-nav { padding-left: 18px; padding-right: 46px; }
+  .navbar .phon-nav:last-child .button-nav { width: 176px; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar .nav-menu { justify-self: center; }
 }

@@ -76,9 +76,14 @@
                 display: none!important;
            }
         </style>
+        <script src="gsap-3.13.0.min.js" defer></script>
+
+        <script src="ScrollTrigger-3.13.0.min.js" defer></script>
+        <script src="hero-motion.js" defer></script>
+        <script src="projects-motion.js" defer></script>
+        <script src="hero-parallax.js" defer></script>
     </head>
     <body>
-<aside class="demo-notice">Portfolio concept built with Webflow. The business details and statistics are illustrative. No accounts are created.</aside>
         <div
             data-animation="default"
             data-collapse="none"
@@ -91,21 +96,19 @@
             <div class="container-hero flex">
                 <a href="#" class="logo-nav">DesignInterior</a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
-                    <a href="#servieces" class="menu-item-nav w-nav-link">Services</a
-                    ><a href="#Reviews" class="menu-item-nav w-nav-link">Projects</a
-                    ><a href="#contacts" class="menu-item-nav w-nav-link">Contacts</a>
+                    <a href="#servieces" class="menu-item-nav w-nav-link"><span class="nav-label-glow">Services</span></a
+                    ><a href="#Reviews" class="menu-item-nav w-nav-link"><span class="nav-label-glow">Projects</span></a
+                    ><a href="#contacts" class="menu-item-nav w-nav-link"><span class="nav-label-glow">Contacts</span></a>
                 </nav>
                 <div class="phon-nav">
-                    <div class="registration">Interactive demo</div>
                     <a data-w-id="2e2c09ef-ed6f-c383-bbce-eebb34027a79" href="#" class="button-nav w-inline-block"
-                        ><div class="btn-title-nav">View demo</div>
-                        <div class="arrow-text">→</div></a
+                        ><div class="btn-title-nav">View</div>
+                        <div class="arrow-text"><span class="button-arrow-glyph" aria-hidden="true">→</span></div></a
                     >
                 </div>
-                <div class="phon-nav">
-                    <span class="demo-contact">Concept project · no live phone service</span><a href="#workspace" class="button-nav w-inline-block"
+                <div class="phon-nav"><a href="#workspace" class="button-nav w-inline-block"
                         ><div class="btn-title-nav">Explore the concept</div>
-                        <div class="arrow-text">→</div></a
+                        <div class="arrow-text"><span class="button-arrow-glyph" aria-hidden="true">→</span></div></a
                     >
                 </div>
             </div>
@@ -117,13 +120,13 @@
                         <h1 class="h1-text-main">Office interiors<br />Large selection</h1>
                         <div class="text-block">Available 2/5 slots</div>
                     </div>
-                    <img
+                    <div class="hero-photo-reveal"><div class="hero-photo-depth"><img
                         src="69a896fa397954fa14888b35_cdu445-interior-design-828545_1920.jpg"
-                        loading="lazy"
+                        loading="eager"
                         sizes="(max-width: 1920px) 100vw, 1920px"
                         alt=""
                         class="img-main"
-                    />
+                    /></div></div>
                     <div class="w-layout-grid grid-main">
                         <h2 class="text-left-main">Projects currently <br />in progress (in sale)</h2>
                         <div class="div-right-main">
@@ -383,12 +386,7 @@
                         <div class="phone-nav-copy">
                             <span class="demo-contact">Concept project · no live phone service</span><a href="#workspace" class="button-nav w-inline-block"
                                 ><div class="btn-title-nav">Explore the concept</div>
-                                <img
-                                    src="69a723e8b262e1ba649b5d27_Frame%20(1).svg"
-                                    loading="lazy"
-                                    alt=""
-                                    class="a"
-                            /></a>
+                                <div class="arrow-text"><span class="button-arrow-glyph" aria-hidden="true">→</span></div></a>
                         </div>
                     </div>
                 </div>
@@ -467,7 +465,7 @@
                         <div class="div-right-footer">
                             <span class="demo-contact">Concept project · no live phone service</span><a href="#workspace" class="button-footer w-inline-block"
                                 ><div class="text-block-2">Explore the concept</div>
-                                <div class="arrow-footer">➝</div></a
+                                <div class="arrow-footer"><span class="button-arrow-glyph" aria-hidden="true">➝</span></div></a
                             >
                             <div class="social-footer"><span>Portfolio demonstration — no business social accounts.</span></div>
                         </div>
@@ -496,26 +494,18 @@
         <script
             src="webflow.schunk.36b8fb49256177c8.js"
             type="text/javascript"
-            integrity="sha384-4abIlA5/v7XaW1HMXKBgnUuhnjBYJ/Z9C1OSg4OhmVw9O3QeHJ/qJqFBERCDPv7G"
-            crossorigin="anonymous"
         ></script>
         <script
             src="webflow.schunk.f383f5e6d5965c7d.js"
             type="text/javascript"
-            integrity="sha384-QnOp7fbOcrKXZDi7+0fkHJk90FV9G/AoswfyaoltjC7RwYWcCfFhbXP4nXa9dqGz"
-            crossorigin="anonymous"
         ></script>
         <script
             src="webflow.schunk.dac51c455b7e76af.js"
             type="text/javascript"
-            integrity="sha384-ZQ6U9fIU+7NO4yp5YptTIwCSqp+zvOO+9sjFM6NR3D4Ma7CCSf/lR7Ilthe4YRiw"
-            crossorigin="anonymous"
         ></script>
         <script
             src="webflow.b1dc02e5.c72d580f8ec2b47b.js"
             type="text/javascript"
-            integrity="sha384-Hwu9du25XjBzNuhP6KirnyAP1OPxMgghkKRW8ZTAP6S3lanaCJcSmloBks553b7W"
-            crossorigin="anonymous"
         ></script>
 <script src="demo.js"></script>
     </body>
